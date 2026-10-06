@@ -3,24 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f8f7f3" />
-    <meta name="description" content="Conheça a Blusa Serena: caimento leve, tecido macio e versatilidade para todos os dias. Compre agora na veste." />
-    <title>Blusa Serena — vista seus dias com leveza | veste</title>
+    <meta name="theme-color" content="#f8f3ef" />
+    <meta name="description" content="Blusas confortáveis e cheias de estilo para acompanhar você em todos os momentos. Conheça a Ateliê Veste." />
+    <title>Ateliê Veste — blusas para todos os dias</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              paper: "#f8f7f3",
-              ink: "#26251f",
-              moss: "#65715a",
-              clay: "#bd7657",
-              sand: "#e9e5db",
+              cream: "#f8f3ef",
+              ink: "#352b2b",
+              muted: "#786b69",
+              rose: "#aa6867",
+              "rose-dark": "#8f5555",
+              line: "#eaded8",
+              blush: "#f4e9e4",
             },
             fontFamily: {
               sans: ["DM Sans", "sans-serif"],
-              display: ["DM Serif Display", "serif"],
+              display: ["Playfair Display", "serif"],
+            },
+            backgroundImage: {
+              "warm-glow": "radial-gradient(ellipse at 10% 5%, #efded6 0, transparent 34%), radial-gradient(ellipse at 95% 90%, #e9d8d2 0, transparent 33%)",
             },
           },
         },
@@ -28,278 +33,103 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
-    <style>
-      html { scroll-behavior: smooth; }
-      body { font-family: "DM Sans", sans-serif; }
-      .serif { font-family: "DM Serif Display", serif; }
-      .cart-panel { transform: translateX(100%); transition: transform 250ms ease; }
-      .cart-panel.is-open { transform: translateX(0); }
-      .overlay { opacity: 0; pointer-events: none; transition: opacity 250ms ease; }
-      .overlay.is-open { opacity: 1; pointer-events: auto; }
-      @media (prefers-reduced-motion: reduce) {
-        *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
-      }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
   </head>
-  <body class="bg-paper pb-20 text-ink antialiased sm:pb-0">
-    <div class="bg-moss px-4 py-2.5 text-center text-[10px] tracking-[0.1em] text-white sm:text-xs">
-      FRETE GRÁTIS A PARTIR DE R$ 249 <span class="px-1.5 text-white/50">·</span> 10% OFF NA PRIMEIRA COMPRA: <strong>BEMVINDA10</strong>
-    </div>
+  <body class="min-h-screen bg-warm-glow bg-fixed bg-cream px-[18px] py-[34px] font-sans text-ink sm:px-6">
+    <main class="mx-auto w-full max-w-[480px]">
+      <header class="text-center">
+        <div class="mx-auto mb-[18px] h-28 w-28 rounded-full border border-[#d8b9ac] bg-[#fffaf6] p-[5px]">
+          <img class="h-full w-full rounded-full object-cover object-[center_38%]" src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?auto=format&amp;fit=crop&amp;w=320&amp;h=320&amp;q=85" alt="Arara com blusas da Ateliê Veste" />
+        </div>
+        <p class="mb-1.5 text-[10px] font-bold uppercase tracking-[0.22em] text-rose">Moda feita para você</p>
+        <h1 class="mb-2 font-display text-4xl font-semibold tracking-[-0.04em]">Ateliê Veste</h1>
+        <p class="mx-auto max-w-[330px] text-sm leading-[1.7] text-muted">Blusas confortáveis, versáteis e cheias de <strong class="font-semibold text-ink">personalidade</strong>.<br />Seu novo look favorito começa aqui ✨</p>
+      </header>
 
-    <header class="border-b border-ink/10">
-      <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-        <a href="#" class="serif text-[30px] leading-none tracking-[-0.06em]" aria-label="veste, início">veste<span class="text-clay">.</span></a>
-        <p class="hidden text-[10px] uppercase tracking-[0.2em] text-ink/50 sm:block">Roupa boa é roupa vivida</p>
-        <button id="cart-open" class="flex items-center gap-2 rounded-full px-3 py-2 text-sm transition hover:bg-sand" aria-label="Abrir sacola">
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 8h14l1 12H4L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
-          <span>Sacola</span><span id="cart-count" class="flex h-5 min-w-5 items-center justify-center rounded-full bg-ink px-1 text-[10px] text-white">0</span>
-        </button>
+      <nav class="mt-[27px] grid gap-[11px]" aria-label="Links da Ateliê Veste">
+        <a class="group flex min-h-[62px] items-center gap-[13px] rounded-[15px] border border-rose bg-rose p-[11px_16px] text-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-rose-dark hover:bg-rose-dark hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-dark focus-visible:ring-offset-2" href="#colecao">
+          <span class="grid h-[38px] w-[38px] shrink-0 place-items-center rounded-xl bg-white/15 text-white" aria-hidden="true">
+            <svg class="h-[19px] w-[19px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m16 4 4 3-3 4-2-1v10H9V10l-2 1-3-4 4-3c1 1 2.4 1.5 4 1.5S15 5 16 4Z"/></svg>
+          </span>
+          <span class="flex-1 text-left"><span class="block text-[13px] font-bold">Conheça a coleção</span><span class="mt-[3px] block text-[11px] text-white/80">Blusas para todos os momentos</span></span>
+          <span class="text-[19px] text-white/80" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="group flex min-h-[62px] items-center gap-[13px] rounded-[15px] border border-line bg-[#fffdfa]/90 p-[11px_16px] shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-[#c99a8f] hover:bg-white hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose focus-visible:ring-offset-2" href="#novidades">
+          <span class="grid h-[38px] w-[38px] shrink-0 place-items-center rounded-xl bg-blush text-rose-dark" aria-hidden="true">
+            <svg class="h-[19px] w-[19px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/><path d="m5 5 14 14M19 5 5 19"/></svg>
+          </span>
+          <span class="flex-1 text-left"><span class="block text-[13px] font-bold">Novidades da semana</span><span class="mt-[3px] block text-[11px] text-muted">Veja o que acabou de chegar</span></span>
+          <span class="text-[19px] text-[#a78b84]" aria-hidden="true">↓</span>
+        </a>
+
+        <a class="group flex min-h-[62px] items-center gap-[13px] rounded-[15px] border border-line bg-[#fffdfa]/90 p-[11px_16px] shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-[#c99a8f] hover:bg-white hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose focus-visible:ring-offset-2" href="#mais-amadas">
+          <span class="grid h-[38px] w-[38px] shrink-0 place-items-center rounded-xl bg-blush text-rose-dark" aria-hidden="true">
+            <svg class="h-[19px] w-[19px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 8.7c0 5.2-8.8 10.2-8.8 10.2S3.2 13.9 3.2 8.7A4.2 4.2 0 0 1 12 6.5a4.2 4.2 0 0 1 8.8 2.2Z"/></svg>
+          </span>
+          <span class="flex-1 text-left"><span class="block text-[13px] font-bold">As blusas mais amadas</span><span class="mt-[3px] block text-[11px] text-muted">Os modelos favoritos de vocês</span></span>
+          <span class="text-[19px] text-[#a78b84]" aria-hidden="true">↓</span>
+        </a>
+
+        <a class="group flex min-h-[62px] items-center gap-[13px] rounded-[15px] border border-line bg-[#fffdfa]/90 p-[11px_16px] shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-[#c99a8f] hover:bg-white hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose focus-visible:ring-offset-2" href="#tamanhos">
+          <span class="grid h-[38px] w-[38px] shrink-0 place-items-center rounded-xl bg-blush text-rose-dark" aria-hidden="true">
+            <svg class="h-[19px] w-[19px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v13H4zM8 7V4h8v3M8 11h.01M12 11h.01M16 11h.01"/></svg>
+          </span>
+          <span class="flex-1 text-left"><span class="block text-[13px] font-bold">Guia de tamanhos</span><span class="mt-[3px] block text-[11px] text-muted">Encontre o caimento perfeito</span></span>
+          <span class="text-[19px] text-[#a78b84]" aria-hidden="true">↓</span>
+        </a>
+      </nav>
+
+      <section id="colecao" class="scroll-mt-6" aria-labelledby="colecao-title">
+        <h2 id="colecao-title" class="my-7 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.18em] text-muted before:h-px before:flex-1 before:bg-line after:h-px after:flex-1 after:bg-line">Escolha seu estilo</h2>
+        <a class="flex min-h-[62px] items-center gap-[13px] rounded-[15px] border border-line bg-[#fffdfa]/90 p-[11px_16px] shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-[#c99a8f] hover:bg-white hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose focus-visible:ring-offset-2" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+          <span class="grid h-[38px] w-[38px] shrink-0 place-items-center rounded-xl bg-blush text-rose-dark" aria-hidden="true">
+            <svg class="h-[19px] w-[19px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>
+          </span>
+          <span class="flex-1 text-left"><span class="block text-[13px] font-bold">Compre pelo Instagram</span><span class="mt-[3px] block text-[11px] text-muted">Escolha seu modelo e fale com a gente</span></span>
+          <span class="text-[19px] text-[#a78b84]" aria-hidden="true">↗</span>
+        </a>
+      </section>
+
+      <section id="novidades" class="scroll-mt-6" aria-labelledby="novidades-title">
+        <h2 id="novidades-title" class="my-7 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.18em] text-muted before:h-px before:flex-1 before:bg-line after:h-px after:flex-1 after:bg-line">Novidades</h2>
+        <div class="flex min-h-[62px] items-center gap-[13px] rounded-[15px] border border-line bg-[#fffdfa]/90 p-[11px_16px] shadow-sm">
+          <span class="grid h-[38px] w-[38px] shrink-0 place-items-center rounded-xl bg-blush text-rose-dark" aria-hidden="true">
+            <svg class="h-[19px] w-[19px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.8 6 6.2.7-4.6 4.2 1.2 6.1-5.6-3.1-5.6 3.1 1.2-6.1L3 9.7 9.2 9 12 3Z"/></svg>
+          </span>
+          <span class="flex-1 text-left"><span class="block text-[13px] font-bold">Peças novas toda semana</span><span class="mt-[3px] block text-[11px] text-muted">Acompanhe nossos lançamentos nas redes</span></span>
+        </div>
+      </section>
+
+      <section id="mais-amadas" class="scroll-mt-6" aria-labelledby="favoritas-title">
+        <h2 id="favoritas-title" class="my-7 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.18em] text-muted before:h-px before:flex-1 before:bg-line after:h-px after:flex-1 after:bg-line">Mais amadas</h2>
+        <div class="flex min-h-[62px] items-center gap-[13px] rounded-[15px] border border-line bg-[#fffdfa]/90 p-[11px_16px] shadow-sm">
+          <span class="grid h-[38px] w-[38px] shrink-0 place-items-center rounded-xl bg-blush text-rose-dark" aria-hidden="true">
+            <svg class="h-[19px] w-[19px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-8-4.8-8-11a4.5 4.5 0 0 1 8-2.9A4.5 4.5 0 0 1 20 9c0 6.2-8 11-8 11Z"/></svg>
+          </span>
+          <span class="flex-1 text-left"><span class="block text-[13px] font-bold">Básicas que combinam com tudo</span><span class="mt-[3px] block text-[11px] text-muted">Conforto e estilo para usar sempre</span></span>
+        </div>
+      </section>
+
+      <section id="tamanhos" class="scroll-mt-6" aria-labelledby="tamanhos-title">
+        <h2 id="tamanhos-title" class="my-7 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.18em] text-muted before:h-px before:flex-1 before:bg-line after:h-px after:flex-1 after:bg-line">A gente te ajuda</h2>
+        <div class="flex min-h-[62px] items-center gap-[13px] rounded-[15px] border border-line bg-[#fffdfa]/90 p-[11px_16px] shadow-sm">
+          <span class="grid h-[38px] w-[38px] shrink-0 place-items-center rounded-xl bg-blush text-rose-dark" aria-hidden="true">
+            <svg class="h-[19px] w-[19px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <span class="flex-1 text-left"><span class="block text-[13px] font-bold">P, M, G e GG</span><span class="mt-[3px] block text-[11px] text-muted">Chame a gente para conferir as medidas</span></span>
+        </div>
+      </section>
+
+      <div class="mt-[21px] flex justify-center gap-2.5" aria-label="Redes sociais">
+        <a class="grid h-[42px] w-[42px] place-items-center rounded-full border border-line bg-[#fffdfa]/75 text-rose-dark transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose focus-visible:ring-offset-2" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Ateliê Veste">
+          <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>
+        </a>
+        <a class="grid h-[42px] w-[42px] place-items-center rounded-full border border-line bg-[#fffdfa]/75 text-rose-dark transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose focus-visible:ring-offset-2" href="#colecao" aria-label="Ver links para comprar">
+          <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l1 12H4L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
+        </a>
       </div>
-    </header>
-
-    <main>
-      <section id="topo" class="mx-auto grid max-w-7xl items-center gap-8 px-5 py-7 sm:px-8 sm:py-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-14">
-        <div class="relative">
-          <div class="aspect-[0.96] overflow-hidden rounded-2xl bg-[#dfd9cc] sm:aspect-[1.02]">
-            <img id="hero-image" class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1598554747436-c9293d6a588f?auto=format&fit=crop&w=1400&q=90" alt="Blusa Serena de tecido leve em uma composição editorial" />
-          </div>
-          <span class="absolute left-4 top-4 rounded-full bg-paper px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.15em] sm:left-5 sm:top-5 sm:text-[10px]">A favorita de vocês</span>
-          <div class="absolute bottom-4 right-4 rounded-full bg-paper/90 px-3 py-2 text-[10px] sm:bottom-5 sm:right-5 sm:text-xs">Feita para acompanhar você</div>
-        </div>
-
-        <div class="lg:py-8">
-          <p class="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-clay sm:text-xs"><span class="h-px w-7 bg-clay"></span>Seu novo essencial</p>
-          <h1 class="serif mt-4 text-5xl leading-[0.98] tracking-[-0.035em] sm:text-6xl lg:text-[4.4rem]">A blusa que<br />vai com <span class="text-clay">você.</span></h1>
-          <p class="mt-5 max-w-lg text-sm leading-7 text-ink/65 sm:text-base">Apresentamos a <strong class="font-semibold text-ink">Blusa Serena</strong>: leve no corpo, fácil de combinar e confortável do primeiro café ao último compromisso.</p>
-
-          <div class="mt-5 flex items-center gap-2 text-xs">
-            <span class="tracking-[0.12em] text-clay" aria-label="5 de 5 estrelas">★★★★★</span>
-            <span class="font-medium">4,9/5</span><a href="#depoimentos" class="text-ink/50 underline underline-offset-2">mais de 320 avaliações</a>
-          </div>
-
-          <div class="mt-6 flex flex-wrap items-baseline gap-3">
-            <span class="text-sm text-ink/40 line-through">R$ 249,00</span>
-            <span class="text-3xl font-medium tracking-tight">R$ 199,00</span>
-            <span class="rounded-full bg-[#e8eee3] px-2.5 py-1 text-[10px] font-semibold text-moss">20% OFF</span>
-          </div>
-          <p class="mt-1 text-xs text-ink/55">ou 3x de R$ 66,33 sem juros · 5% OFF no Pix</p>
-
-          <div class="mt-7">
-            <div class="mb-3 flex items-center justify-between">
-              <span class="text-xs font-semibold">Escolha seu tamanho <span id="selected-size" class="font-normal text-ink/55">· M</span></span>
-              <a href="#tamanhos" class="text-[11px] text-ink/55 underline underline-offset-2 hover:text-ink">Guia de medidas</a>
-            </div>
-            <div class="flex gap-2" role="group" aria-label="Selecione o tamanho">
-              <button class="size-option flex h-11 w-12 items-center justify-center rounded-full border border-ink/20 text-xs transition hover:border-ink" data-size="P" aria-pressed="false">P</button>
-              <button class="size-option flex h-11 w-12 items-center justify-center rounded-full border border-ink bg-ink text-xs text-white transition" data-size="M" aria-pressed="true">M</button>
-              <button class="size-option flex h-11 w-12 items-center justify-center rounded-full border border-ink/20 text-xs transition hover:border-ink" data-size="G" aria-pressed="false">G</button>
-              <button class="size-option flex h-11 w-12 items-center justify-center rounded-full border border-ink/20 text-xs transition hover:border-ink" data-size="GG" aria-pressed="false">GG</button>
-            </div>
-          </div>
-
-          <div class="mt-7 flex flex-col gap-3 sm:flex-row">
-            <button id="buy-now" class="flex min-h-14 flex-1 items-center justify-center gap-3 rounded-full bg-ink px-6 text-sm font-medium text-white transition hover:bg-moss focus:outline-none focus:ring-2 focus:ring-moss focus:ring-offset-2">Quero a minha Blusa Serena <span aria-hidden="true">↗</span></button>
-            <button id="add-to-cart" class="min-h-14 rounded-full border border-ink/20 px-6 text-sm transition hover:border-ink hover:bg-white">Adicionar à sacola +</button>
-          </div>
-          <div class="mt-6 grid grid-cols-3 gap-3 border-t border-ink/10 pt-5 text-center">
-            <div><span class="text-base" aria-hidden="true">↗</span><p class="mt-1 text-[10px] leading-4 text-ink/60 sm:text-xs">Frete grátis<br />acima de R$ 249</p></div>
-            <div><span class="text-base" aria-hidden="true">♡</span><p class="mt-1 text-[10px] leading-4 text-ink/60 sm:text-xs">Troca fácil<br />em até 30 dias</p></div>
-            <div><span class="text-base" aria-hidden="true">⌑</span><p class="mt-1 text-[10px] leading-4 text-ink/60 sm:text-xs">Pagamento<br />100% seguro</p></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="border-y border-ink/10 bg-[#efede6] px-5 py-8 sm:px-8">
-        <div class="mx-auto grid max-w-5xl grid-cols-2 gap-5 text-center sm:grid-cols-4 sm:gap-4">
-          <div><p class="serif text-xl sm:text-2xl">Tecido leve</p><p class="mt-1 text-[10px] text-ink/55 sm:text-xs">viscose macia ao toque</p></div>
-          <div><p class="serif text-xl sm:text-2xl">Caimento solto</p><p class="mt-1 text-[10px] text-ink/55 sm:text-xs">conforto sem esforço</p></div>
-          <div><p class="serif text-xl sm:text-2xl">Combina fácil</p><p class="mt-1 text-[10px] text-ink/55 sm:text-xs">do jeans à alfaiataria</p></div>
-          <div><p class="serif text-xl sm:text-2xl">Feita no Brasil</p><p class="mt-1 text-[10px] text-ink/55 sm:text-xs">produção em pequena escala</p></div>
-        </div>
-      </section>
-
-      <section class="mx-auto grid max-w-6xl items-center gap-8 px-5 py-14 sm:px-8 sm:py-20 md:grid-cols-2 lg:gap-16">
-        <div class="order-2 md:order-1">
-          <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-clay">Por que a Serena?</p>
-          <h2 class="serif mt-3 text-4xl leading-tight tracking-tight sm:text-5xl">Bonita no cabide.<br />Melhor ainda em você.</h2>
-          <p class="mt-5 max-w-md text-sm leading-7 text-ink/65">A gente acredita em roupa que faz parte da vida de verdade. A Serena tem um toque gostoso, um caimento que não prende e detalhes delicados para deixar qualquer combinação com a sua cara.</p>
-          <ul class="mt-6 space-y-3 text-sm text-ink/75">
-            <li class="flex gap-3"><span class="text-moss">✓</span> Viscose respirável, perfeita para o dia a dia</li>
-            <li class="flex gap-3"><span class="text-moss">✓</span> Modelagem confortável que veste sem apertar</li>
-            <li class="flex gap-3"><span class="text-moss">✓</span> Fácil de cuidar e simples de combinar</li>
-            <li class="flex gap-3"><span class="text-moss">✓</span> Disponível do P ao GG</li>
-          </ul>
-          <a href="#topo" class="mt-7 inline-flex items-center gap-2 text-sm font-medium underline underline-offset-4 transition hover:text-clay">Escolher meu tamanho <span aria-hidden="true">↑</span></a>
-        </div>
-        <div class="order-1 aspect-[0.95] overflow-hidden rounded-2xl bg-[#ddd7cb] md:order-2">
-          <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1100&q=85" alt="Detalhe do caimento e da estampa delicada da Blusa Serena" class="h-full w-full object-cover" loading="lazy" />
-        </div>
-      </section>
-
-      <section id="depoimentos" class="bg-[#efede6] px-5 py-14 sm:px-8 sm:py-20">
-        <div class="mx-auto max-w-6xl">
-          <div class="text-center"><p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-clay">Quem já vestiu, conta</p><h2 class="serif mt-3 text-4xl tracking-tight sm:text-5xl">Ela já é queridinha por aqui.</h2></div>
-          <div class="mt-8 grid gap-4 md:grid-cols-3">
-            <article class="rounded-2xl bg-paper p-6 sm:p-7"><p class="tracking-[0.12em] text-clay">★★★★★</p><blockquote class="mt-4 text-sm leading-6 text-ink/75">“O tecido é uma delícia e o caimento ficou perfeito. Já usei com jeans e com saia — amei!”</blockquote><p class="mt-5 text-xs font-semibold">Mariana R. <span class="font-normal text-ink/50">· compra verificada</span></p></article>
-            <article class="rounded-2xl bg-paper p-6 sm:p-7"><p class="tracking-[0.12em] text-clay">★★★★★</p><blockquote class="mt-4 text-sm leading-6 text-ink/75">“Aquela blusa que você pega sem pensar e sempre fica bem. Chegou rapidinho e bem embalada.”</blockquote><p class="mt-5 text-xs font-semibold">Ana C. <span class="font-normal text-ink/50">· compra verificada</span></p></article>
-            <article class="rounded-2xl bg-paper p-6 sm:p-7"><p class="tracking-[0.12em] text-clay">★★★★★</p><blockquote class="mt-4 text-sm leading-6 text-ink/75">“Comprei uma para testar e já quero outra cor. Leve, confortável e muito mais bonita ao vivo.”</blockquote><p class="mt-5 text-xs font-semibold">Júlia M. <span class="font-normal text-ink/50">· compra verificada</span></p></article>
-          </div>
-        </div>
-      </section>
-
-      <section id="tamanhos" class="mx-auto max-w-4xl px-5 py-14 sm:px-8 sm:py-20">
-        <div class="text-center"><p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-clay">Sem dúvida na escolha</p><h2 class="serif mt-3 text-4xl tracking-tight sm:text-5xl">Seu tamanho ideal.</h2><p class="mt-3 text-sm text-ink/60">Compare as medidas com uma blusa que você já ama.</p></div>
-        <div class="mx-auto mt-7 max-w-xl overflow-hidden rounded-xl border border-ink/10">
-          <div class="grid grid-cols-4 bg-[#efede6] text-xs font-semibold"><span class="p-3 sm:p-4">Tam.</span><span class="p-3 sm:p-4">Busto</span><span class="p-3 sm:p-4">Cintura</span><span class="p-3 sm:p-4">Comprimento</span></div>
-          <div class="grid grid-cols-4 border-t border-ink/10 text-xs"><span class="p-3 sm:p-4">P</span><span class="p-3 sm:p-4">88 cm</span><span class="p-3 sm:p-4">88 cm</span><span class="p-3 sm:p-4">58 cm</span></div>
-          <div class="grid grid-cols-4 border-t border-ink/10 bg-white/50 text-xs"><span class="p-3 sm:p-4">M</span><span class="p-3 sm:p-4">96 cm</span><span class="p-3 sm:p-4">96 cm</span><span class="p-3 sm:p-4">60 cm</span></div>
-          <div class="grid grid-cols-4 border-t border-ink/10 text-xs"><span class="p-3 sm:p-4">G</span><span class="p-3 sm:p-4">104 cm</span><span class="p-3 sm:p-4">104 cm</span><span class="p-3 sm:p-4">62 cm</span></div>
-          <div class="grid grid-cols-4 border-t border-ink/10 bg-white/50 text-xs"><span class="p-3 sm:p-4">GG</span><span class="p-3 sm:p-4">112 cm</span><span class="p-3 sm:p-4">112 cm</span><span class="p-3 sm:p-4">64 cm</span></div>
-        </div>
-        <p class="mt-3 text-center text-[10px] leading-5 text-ink/50">Medidas aproximadas da peça. Se preferir um caimento mais soltinho, escolha um tamanho acima.</p>
-      </section>
-
-      <section class="bg-moss px-5 py-12 text-center text-white sm:px-8 sm:py-16">
-        <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/65">A sua nova favorita está aqui</p>
-        <h2 class="serif mx-auto mt-3 max-w-2xl text-4xl leading-tight sm:text-5xl">Vista a Blusa Serena.<br class="hidden sm:block" /> Sinta a diferença.</h2>
-        <p class="mt-4 text-sm text-white/75">De R$ 249 por <strong class="text-white">R$ 199</strong> · frete grátis a partir de R$ 249</p>
-        <a href="#topo" class="mt-7 inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-paper px-8 text-sm font-medium text-ink transition hover:bg-white">Escolher meu tamanho <span aria-hidden="true">↑</span></a>
-      </section>
+      <footer class="mt-[25px] text-center text-[10px] text-[#968984]">Feito com <span class="text-rose" aria-label="carinho">♥</span> para vestir seus dias</footer>
     </main>
-
-    <footer class="mx-auto flex max-w-7xl flex-col justify-between gap-3 px-5 py-6 text-[10px] text-ink/50 sm:flex-row sm:px-8">
-      <a href="#" class="serif text-2xl tracking-[-0.06em] text-ink">veste<span class="text-clay">.</span></a>
-      <p>© 2025 veste. Feito com carinho no Brasil.</p>
-      <p>Pagamento seguro · Troca fácil em até 30 dias</p>
-    </footer>
-
-    <div id="overlay" class="overlay fixed inset-0 z-40 bg-ink/35" aria-hidden="true"></div>
-    <aside id="cart-panel" class="cart-panel fixed bottom-0 right-0 top-0 z-50 flex w-full max-w-md flex-col bg-paper shadow-2xl" aria-label="Sua sacola" aria-hidden="true">
-      <div class="flex items-center justify-between border-b border-ink/10 px-6 py-5"><div><p class="serif text-2xl">Sua sacola</p><p id="cart-subtitle" class="mt-1 text-xs text-ink/50">0 itens</p></div><button id="cart-close" class="flex h-10 w-10 items-center justify-center rounded-full transition hover:bg-sand" aria-label="Fechar sacola">✕</button></div>
-      <div id="cart-items" class="flex-1 overflow-y-auto px-6 py-5"><p id="cart-empty" class="py-12 text-center text-sm text-ink/55">Sua sacola ainda está vazia.</p></div>
-      <div class="border-t border-ink/10 px-6 py-5"><div class="flex justify-between text-sm"><span>Subtotal</span><span id="cart-total">R$ 0</span></div><p class="mt-2 text-xs text-ink/50">Frete calculado na próxima etapa.</p><button id="checkout" class="mt-5 w-full rounded-full bg-ink py-4 text-sm text-white transition hover:bg-moss">Finalizar compra</button></div>
-    </aside>
-    <div id="toast" class="pointer-events-none fixed bottom-24 left-1/2 z-[60] -translate-x-1/2 translate-y-3 rounded-full bg-ink px-5 py-3 text-xs text-white opacity-0 shadow-lg transition sm:bottom-5" role="status"></div>
-
-    <div class="fixed inset-x-0 bottom-0 z-30 flex items-center justify-between border-t border-ink/10 bg-paper/95 px-4 py-3 backdrop-blur sm:hidden">
-      <div><p class="text-[10px] text-ink/50">Blusa Serena</p><p class="text-base font-semibold">R$ 199,00</p></div>
-      <button id="mobile-buy" class="rounded-full bg-ink px-5 py-3 text-xs font-medium text-white">Comprar agora ↗</button>
-    </div>
-
-    <script>
-      const cart = [];
-      let selectedSize = "M";
-      const cartPanel = document.querySelector("#cart-panel");
-      const overlay = document.querySelector("#overlay");
-      const cartItems = document.querySelector("#cart-items");
-      const cartEmpty = document.querySelector("#cart-empty");
-      const toast = document.querySelector("#toast");
-      let toastTimer;
-
-      function formatPrice(price) {
-        return new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL", minimumFractionDigits: 2 }).format(price);
-      }
-
-      function openCart() {
-        cartPanel.classList.add("is-open");
-        overlay.classList.add("is-open");
-        cartPanel.setAttribute("aria-hidden", "false");
-        document.body.classList.add("overflow-hidden");
-        document.querySelector("#cart-close").focus();
-      }
-
-      function closeCart() {
-        cartPanel.classList.remove("is-open");
-        overlay.classList.remove("is-open");
-        cartPanel.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("overflow-hidden");
-      }
-
-      function renderCart() {
-        const quantity = cart.reduce((sum, item) => sum + item.quantity, 0);
-        const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-        document.querySelector("#cart-count").textContent = quantity;
-        document.querySelector("#cart-subtitle").textContent = `${quantity} ${quantity === 1 ? "item" : "itens"}`;
-        document.querySelector("#cart-total").textContent = formatPrice(total);
-        cartEmpty.classList.toggle("hidden", cart.length > 0);
-        cartItems.querySelectorAll(".cart-line").forEach((line) => line.remove());
-
-        cart.forEach((item) => {
-          const line = document.createElement("div");
-          line.className = "cart-line flex items-center justify-between gap-4 border-b border-ink/10 py-4";
-          const details = document.createElement("div");
-          const name = document.createElement("p");
-          name.className = "text-sm font-medium";
-          name.textContent = `Blusa Serena · ${item.size}`;
-          const price = document.createElement("p");
-          price.className = "mt-1 text-xs text-ink/55";
-          price.textContent = `${formatPrice(item.price)} · qtd. ${item.quantity}`;
-          details.append(name, price);
-          const remove = document.createElement("button");
-          remove.type = "button";
-          remove.className = "text-xs underline underline-offset-4 hover:text-clay";
-          remove.textContent = "Remover";
-          remove.setAttribute("aria-label", `Remover Blusa Serena tamanho ${item.size} da sacola`);
-          remove.addEventListener("click", () => {
-            const index = cart.indexOf(item);
-            if (index !== -1) cart.splice(index, 1);
-            renderCart();
-          });
-          line.append(details, remove);
-          cartItems.append(line);
-        });
-      }
-
-      function showToast(message) {
-        toast.textContent = message;
-        toast.classList.remove("translate-y-3", "opacity-0");
-        clearTimeout(toastTimer);
-        toastTimer = setTimeout(() => toast.classList.add("translate-y-3", "opacity-0"), 2400);
-      }
-
-      function addToCart() {
-        const existing = cart.find((item) => item.size === selectedSize);
-        if (existing) existing.quantity += 1;
-        else cart.push({ price: 199, size: selectedSize, quantity: 1 });
-        renderCart();
-        showToast(`Blusa Serena · ${selectedSize} adicionada à sacola`);
-      }
-
-      document.querySelectorAll(".size-option").forEach((button) => {
-        button.addEventListener("click", () => {
-          selectedSize = button.dataset.size;
-          document.querySelector("#selected-size").textContent = `· ${selectedSize}`;
-          document.querySelectorAll(".size-option").forEach((option) => {
-            const active = option === button;
-            option.setAttribute("aria-pressed", String(active));
-            option.classList.toggle("border-ink", active);
-            option.classList.toggle("bg-ink", active);
-            option.classList.toggle("text-white", active);
-            option.classList.toggle("border-ink/20", !active);
-          });
-        });
-      });
-
-      document.querySelector("#cart-open").addEventListener("click", openCart);
-      document.querySelector("#cart-close").addEventListener("click", closeCart);
-      overlay.addEventListener("click", closeCart);
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") closeCart();
-      });
-      document.querySelector("#add-to-cart").addEventListener("click", addToCart);
-      document.querySelector("#buy-now").addEventListener("click", () => {
-        addToCart();
-        openCart();
-      });
-      document.querySelector("#mobile-buy").addEventListener("click", () => {
-        addToCart();
-        openCart();
-      });
-      document.querySelector("#checkout").addEventListener("click", () => {
-        if (!cart.length) showToast("Sua sacola está vazia");
-        else showToast("Pedido pronto! O checkout estará disponível em breve.");
-      });
-    </script>
   </body>
 </html>
