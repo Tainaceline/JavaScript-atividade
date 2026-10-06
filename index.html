@@ -4,11 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f8f7f3" />
-    <meta
-      name="description"
-      content="Peças autorais para deixar a casa com mais cara de casa. Conheça a curadoria mora."
-    />
-    <title>mora — sua casa, do seu jeito</title>
+    <meta name="description" content="Conheça a Blusa Serena: caimento leve, tecido macio e versatilidade para todos os dias. Compre agora na veste." />
+    <title>Blusa Serena — vista seus dias com leveza | veste</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -31,15 +28,11 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
     <style>
       html { scroll-behavior: smooth; }
       body { font-family: "DM Sans", sans-serif; }
       .serif { font-family: "DM Serif Display", serif; }
-      .product-card[hidden] { display: none; }
       .cart-panel { transform: translateX(100%); transition: transform 250ms ease; }
       .cart-panel.is-open { transform: translateX(0); }
       .overlay { opacity: 0; pointer-events: none; transition: opacity 250ms ease; }
@@ -49,199 +42,163 @@
       }
     </style>
   </head>
-  <body class="bg-paper text-ink antialiased">
-    <div class="bg-moss px-4 py-2 text-center text-[11px] tracking-[0.12em] text-white sm:text-xs">
-      FRETE GRÁTIS a partir de R$ 299 · 10% OFF na primeira compra com <span class="font-semibold">MORA10</span>
+  <body class="bg-paper pb-20 text-ink antialiased sm:pb-0">
+    <div class="bg-moss px-4 py-2.5 text-center text-[10px] tracking-[0.1em] text-white sm:text-xs">
+      FRETE GRÁTIS A PARTIR DE R$ 249 <span class="px-1.5 text-white/50">·</span> 10% OFF NA PRIMEIRA COMPRA: <strong>BEMVINDA10</strong>
     </div>
 
-    <header class="sticky top-0 z-30 border-b border-ink/10 bg-paper/95 backdrop-blur">
-      <div class="mx-auto flex max-w-[1440px] items-center justify-between gap-5 px-5 py-4 sm:px-8 lg:px-12">
-        <button id="mobile-menu" class="rounded-full p-2 lg:hidden" aria-label="Abrir menu">
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <header class="border-b border-ink/10">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
+        <a href="#" class="serif text-[30px] leading-none tracking-[-0.06em]" aria-label="veste, início">veste<span class="text-clay">.</span></a>
+        <p class="hidden text-[10px] uppercase tracking-[0.2em] text-ink/50 sm:block">Roupa boa é roupa vivida</p>
+        <button id="cart-open" class="flex items-center gap-2 rounded-full px-3 py-2 text-sm transition hover:bg-sand" aria-label="Abrir sacola">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 8h14l1 12H4L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
+          <span>Sacola</span><span id="cart-count" class="flex h-5 min-w-5 items-center justify-center rounded-full bg-ink px-1 text-[10px] text-white">0</span>
         </button>
-        <a href="#" class="serif text-[32px] leading-none tracking-[-0.06em]" aria-label="mora, início">mora<span class="text-clay">.</span></a>
-
-        <nav id="main-nav" class="absolute left-0 right-0 top-full hidden border-b border-ink/10 bg-paper px-6 py-5 lg:static lg:flex lg:border-0 lg:bg-transparent lg:p-0" aria-label="Navegação principal">
-          <div class="flex flex-col gap-4 text-sm lg:flex-row lg:items-center lg:gap-8">
-            <a class="transition hover:text-clay" href="#novidades">Novidades</a>
-            <a class="transition hover:text-clay" href="#colecoes">Coleções</a>
-            <a class="transition hover:text-clay" href="#mais-amados">Mais amados</a>
-            <a class="transition hover:text-clay" href="#sobre">Nossa história</a>
-          </div>
-        </nav>
-
-        <div class="flex items-center gap-2 sm:gap-4">
-          <label class="hidden items-center gap-2 border-b border-ink/25 pb-1 md:flex">
-            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m16 16 4 4"/></svg>
-            <input id="search" type="search" placeholder="Buscar" class="w-24 bg-transparent text-sm outline-none placeholder:text-ink/50 focus:w-36 transition-all" />
-          </label>
-          <button id="cart-open" class="flex items-center gap-2 rounded-full p-2 text-sm transition hover:bg-sand" aria-label="Abrir sacola">
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8h14l1 12H4L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
-            <span class="hidden sm:inline">Sacola</span>
-            <span id="cart-count" class="flex h-5 min-w-5 items-center justify-center rounded-full bg-ink px-1 text-[10px] text-white">0</span>
-          </button>
-        </div>
       </div>
     </header>
 
     <main>
-      <section class="mx-auto grid max-w-[1440px] overflow-hidden px-5 py-6 sm:px-8 md:py-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8 lg:px-12 lg:py-12">
-        <div class="flex flex-col justify-center py-8 lg:py-12">
-          <p class="mb-5 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-moss"><span class="h-px w-8 bg-moss"></span>Feito para viver</p>
-          <h1 class="serif max-w-xl text-[clamp(3.5rem,8vw,7.5rem)] leading-[0.92] tracking-[-0.045em]">Seu canto.<br /><span class="text-clay">Seu encanto.</span></h1>
-          <p class="mt-6 max-w-md text-sm leading-7 text-ink/65 sm:text-base">Objetos com história, materiais naturais e design brasileiro. Para deixar a casa com mais cara de casa.</p>
-          <div class="mt-8 flex flex-wrap items-center gap-5">
-            <a href="#mais-amados" class="inline-flex items-center gap-3 rounded-full bg-ink px-6 py-3.5 text-sm text-white transition hover:bg-moss">Descubra a coleção <span aria-hidden="true">↗</span></a>
-            <span class="text-xs text-ink/50">Design autoral, feito com afeto</span>
+      <section id="topo" class="mx-auto grid max-w-7xl items-center gap-8 px-5 py-7 sm:px-8 sm:py-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-14">
+        <div class="relative">
+          <div class="aspect-[0.96] overflow-hidden rounded-2xl bg-[#dfd9cc] sm:aspect-[1.02]">
+            <img id="hero-image" class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1598554747436-c9293d6a588f?auto=format&fit=crop&w=1400&q=90" alt="Blusa Serena de tecido leve em uma composição editorial" />
           </div>
-          <div class="mt-12 hidden items-center gap-3 text-xs text-ink/55 lg:flex"><span class="flex -space-x-2"><span class="h-7 w-7 rounded-full border-2 border-paper bg-[#d6b6a4]"></span><span class="h-7 w-7 rounded-full border-2 border-paper bg-[#8b9479]"></span><span class="h-7 w-7 rounded-full border-2 border-paper bg-[#d7c89f]"></span></span>Mais de 2.000 casas felizes</div>
+          <span class="absolute left-4 top-4 rounded-full bg-paper px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.15em] sm:left-5 sm:top-5 sm:text-[10px]">A favorita de vocês</span>
+          <div class="absolute bottom-4 right-4 rounded-full bg-paper/90 px-3 py-2 text-[10px] sm:bottom-5 sm:right-5 sm:text-xs">Feita para acompanhar você</div>
         </div>
-        <div class="relative min-h-[360px] overflow-hidden rounded-[1.5rem] bg-[#dfd9cc] sm:min-h-[470px] lg:min-h-[610px]">
-          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85" alt="Sala aconchegante com móveis de madeira e decoração natural" class="absolute inset-0 h-full w-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-          <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between text-white sm:bottom-8 sm:left-8 sm:right-8">
-            <div><p class="text-[10px] uppercase tracking-[0.2em] text-white/75">A casa é sua</p><p class="serif mt-1 text-2xl sm:text-3xl">Coleção viver bem</p></div>
-            <span class="flex h-11 w-11 items-center justify-center rounded-full border border-white/70 text-lg" aria-hidden="true">↗</span>
+
+        <div class="lg:py-8">
+          <p class="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-clay sm:text-xs"><span class="h-px w-7 bg-clay"></span>Seu novo essencial</p>
+          <h1 class="serif mt-4 text-5xl leading-[0.98] tracking-[-0.035em] sm:text-6xl lg:text-[4.4rem]">A blusa que<br />vai com <span class="text-clay">você.</span></h1>
+          <p class="mt-5 max-w-lg text-sm leading-7 text-ink/65 sm:text-base">Apresentamos a <strong class="font-semibold text-ink">Blusa Serena</strong>: leve no corpo, fácil de combinar e confortável do primeiro café ao último compromisso.</p>
+
+          <div class="mt-5 flex items-center gap-2 text-xs">
+            <span class="tracking-[0.12em] text-clay" aria-label="5 de 5 estrelas">★★★★★</span>
+            <span class="font-medium">4,9/5</span><a href="#depoimentos" class="text-ink/50 underline underline-offset-2">mais de 320 avaliações</a>
           </div>
-        </div>
-      </section>
 
-      <section id="colecoes" class="mx-auto max-w-[1440px] px-5 py-10 sm:px-8 lg:px-12 lg:py-16">
-        <div class="mb-6 flex items-end justify-between">
-          <div><p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-clay">Encontre o seu jeito</p><h2 class="serif mt-2 text-3xl tracking-tight sm:text-4xl">Explore por espaço</h2></div>
-          <a class="hidden text-sm underline underline-offset-4 transition hover:text-clay sm:inline" href="#mais-amados">Ver tudo</a>
-        </div>
-        <div class="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-5">
-          <a href="#mais-amados" data-category-link="Sala" class="group relative aspect-[0.92] overflow-hidden rounded-2xl bg-sand sm:aspect-[1.15]">
-            <img class="h-full w-full object-cover transition duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=700&q=80" alt="Sala decorada em tons naturais" loading="lazy" />
-            <span class="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent"></span><span class="absolute bottom-4 left-4 text-sm font-medium text-white sm:bottom-5 sm:left-5 sm:text-base">Sala <span aria-hidden="true">↗</span></span>
-          </a>
-          <a href="#mais-amados" data-category-link="Mesa" class="group relative aspect-[0.92] overflow-hidden rounded-2xl bg-sand sm:aspect-[1.15]">
-            <img class="h-full w-full object-cover transition duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1603199506016-b9a594b593c0?auto=format&fit=crop&w=700&q=80" alt="Mesa posta com louças e flores" loading="lazy" />
-            <span class="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent"></span><span class="absolute bottom-4 left-4 text-sm font-medium text-white sm:bottom-5 sm:left-5 sm:text-base">Mesa <span aria-hidden="true">↗</span></span>
-          </a>
-          <a href="#mais-amados" data-category-link="Iluminação" class="group relative aspect-[0.92] overflow-hidden rounded-2xl bg-sand sm:aspect-[1.15]">
-            <img class="h-full w-full object-cover transition duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=700&q=80" alt="Luminária de design em um ambiente aconchegante" loading="lazy" />
-            <span class="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent"></span><span class="absolute bottom-4 left-4 text-sm font-medium text-white sm:bottom-5 sm:left-5 sm:text-base">Iluminação <span aria-hidden="true">↗</span></span>
-          </a>
-          <a href="#mais-amados" data-category-link="Decor" class="group relative aspect-[0.92] overflow-hidden rounded-2xl bg-sand sm:aspect-[1.15]">
-            <img class="h-full w-full object-cover transition duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=700&q=80" alt="Detalhes decorativos e plantas" loading="lazy" />
-            <span class="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent"></span><span class="absolute bottom-4 left-4 text-sm font-medium text-white sm:bottom-5 sm:left-5 sm:text-base">Decor <span aria-hidden="true">↗</span></span>
-          </a>
-        </div>
-      </section>
+          <div class="mt-6 flex flex-wrap items-baseline gap-3">
+            <span class="text-sm text-ink/40 line-through">R$ 249,00</span>
+            <span class="text-3xl font-medium tracking-tight">R$ 199,00</span>
+            <span class="rounded-full bg-[#e8eee3] px-2.5 py-1 text-[10px] font-semibold text-moss">20% OFF</span>
+          </div>
+          <p class="mt-1 text-xs text-ink/55">ou 3x de R$ 66,33 sem juros · 5% OFF no Pix</p>
 
-      <section id="mais-amados" class="bg-[#efede6]">
-        <div id="novidades" class="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 lg:px-12 lg:py-20">
-          <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
-            <div><p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-clay">Escolhas que ficam</p><h2 class="serif mt-2 text-3xl tracking-tight sm:text-4xl">Os mais amados</h2><p class="mt-2 text-sm text-ink/60">Peças especiais para viver todos os dias.</p></div>
-            <div class="flex gap-2 overflow-x-auto pb-1" aria-label="Filtrar produtos">
-              <button class="filter-btn whitespace-nowrap rounded-full bg-ink px-4 py-2 text-xs text-white" data-filter="Todos">Tudo</button>
-              <button class="filter-btn whitespace-nowrap rounded-full border border-ink/20 px-4 py-2 text-xs transition hover:border-ink" data-filter="Sala">Sala</button>
-              <button class="filter-btn whitespace-nowrap rounded-full border border-ink/20 px-4 py-2 text-xs transition hover:border-ink" data-filter="Mesa">Mesa</button>
-              <button class="filter-btn whitespace-nowrap rounded-full border border-ink/20 px-4 py-2 text-xs transition hover:border-ink" data-filter="Decor">Decor</button>
+          <div class="mt-7">
+            <div class="mb-3 flex items-center justify-between">
+              <span class="text-xs font-semibold">Escolha seu tamanho <span id="selected-size" class="font-normal text-ink/55">· M</span></span>
+              <a href="#tamanhos" class="text-[11px] text-ink/55 underline underline-offset-2 hover:text-ink">Guia de medidas</a>
+            </div>
+            <div class="flex gap-2" role="group" aria-label="Selecione o tamanho">
+              <button class="size-option flex h-11 w-12 items-center justify-center rounded-full border border-ink/20 text-xs transition hover:border-ink" data-size="P" aria-pressed="false">P</button>
+              <button class="size-option flex h-11 w-12 items-center justify-center rounded-full border border-ink bg-ink text-xs text-white transition" data-size="M" aria-pressed="true">M</button>
+              <button class="size-option flex h-11 w-12 items-center justify-center rounded-full border border-ink/20 text-xs transition hover:border-ink" data-size="G" aria-pressed="false">G</button>
+              <button class="size-option flex h-11 w-12 items-center justify-center rounded-full border border-ink/20 text-xs transition hover:border-ink" data-size="GG" aria-pressed="false">GG</button>
             </div>
           </div>
-          <div id="product-grid" class="mt-7 grid grid-cols-2 gap-x-3 gap-y-8 sm:mt-9 sm:grid-cols-2 sm:gap-x-5 lg:grid-cols-4 lg:gap-x-6">
-            <article class="product-card group" data-category="Sala" data-name="Poltrona Aurora" data-price="1890">
-              <div class="relative aspect-[0.83] overflow-hidden rounded-xl bg-[#ddd7cb]">
-                <img class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=800&q=85" alt="Poltrona Aurora em tecido claro" loading="lazy" />
-                <span class="absolute left-3 top-3 rounded-full bg-paper px-3 py-1 text-[10px] uppercase tracking-wider">Mais vendido</span>
-                <button class="favorite absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-paper/90 text-lg transition hover:text-clay" aria-label="Adicionar Poltrona Aurora aos favoritos">♡</button>
-                <button class="quick-add absolute bottom-3 left-3 right-3 translate-y-2 rounded-full bg-paper/95 py-3 text-xs font-medium opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100 focus:translate-y-0 focus:opacity-100">Adicionar à sacola +</button>
-              </div>
-              <div class="flex items-start justify-between gap-2 pt-3"><div><p class="text-sm font-medium">Poltrona Aurora</p><p class="mt-1 text-xs text-ink/50">Madeira maciça · Linho</p></div><p class="whitespace-nowrap text-sm">R$ 1.890</p></div>
-            </article>
-            <article class="product-card group" data-category="Mesa" data-name="Vaso Brisa" data-price="189">
-              <div class="relative aspect-[0.83] overflow-hidden rounded-xl bg-[#d4c7b5]">
-                <img class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" src="https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&w=800&q=85" alt="Vaso de cerâmica artesanal com flores" loading="lazy" />
-                <span class="absolute left-3 top-3 rounded-full bg-paper px-3 py-1 text-[10px] uppercase tracking-wider">Feito à mão</span>
-                <button class="favorite absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-paper/90 text-lg transition hover:text-clay" aria-label="Adicionar Vaso Brisa aos favoritos">♡</button>
-                <button class="quick-add absolute bottom-3 left-3 right-3 translate-y-2 rounded-full bg-paper/95 py-3 text-xs font-medium opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100 focus:translate-y-0 focus:opacity-100">Adicionar à sacola +</button>
-              </div>
-              <div class="flex items-start justify-between gap-2 pt-3"><div><p class="text-sm font-medium">Vaso Brisa</p><p class="mt-1 text-xs text-ink/50">Cerâmica artesanal</p></div><p class="whitespace-nowrap text-sm">R$ 189</p></div>
-            </article>
-            <article class="product-card group" data-category="Decor" data-name="Almofada Terra" data-price="149">
-              <div class="relative aspect-[0.83] overflow-hidden rounded-xl bg-[#d9c8b6]">
-                <img class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=85" alt="Almofada decorativa em tons de terra" loading="lazy" />
-                <button class="favorite absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-paper/90 text-lg transition hover:text-clay" aria-label="Adicionar Almofada Terra aos favoritos">♡</button>
-                <button class="quick-add absolute bottom-3 left-3 right-3 translate-y-2 rounded-full bg-paper/95 py-3 text-xs font-medium opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100 focus:translate-y-0 focus:opacity-100">Adicionar à sacola +</button>
-              </div>
-              <div class="flex items-start justify-between gap-2 pt-3"><div><p class="text-sm font-medium">Almofada Terra</p><p class="mt-1 text-xs text-ink/50">Linho lavado · 45 × 45 cm</p></div><p class="whitespace-nowrap text-sm">R$ 149</p></div>
-            </article>
-            <article class="product-card group" data-category="Sala" data-name="Luminária Sol" data-price="420">
-              <div class="relative aspect-[0.83] overflow-hidden rounded-xl bg-[#d4d0c4]">
-                <img class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=85" alt="Luminária Sol com luz quente" loading="lazy" />
-                <span class="absolute left-3 top-3 rounded-full bg-paper px-3 py-1 text-[10px] uppercase tracking-wider">Novo</span>
-                <button class="favorite absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-paper/90 text-lg transition hover:text-clay" aria-label="Adicionar Luminária Sol aos favoritos">♡</button>
-                <button class="quick-add absolute bottom-3 left-3 right-3 translate-y-2 rounded-full bg-paper/95 py-3 text-xs font-medium opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100 focus:translate-y-0 focus:opacity-100">Adicionar à sacola +</button>
-              </div>
-              <div class="flex items-start justify-between gap-2 pt-3"><div><p class="text-sm font-medium">Luminária Sol</p><p class="mt-1 text-xs text-ink/50">Metal e vidro opalino</p></div><p class="whitespace-nowrap text-sm">R$ 420</p></div>
-            </article>
+
+          <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+            <button id="buy-now" class="flex min-h-14 flex-1 items-center justify-center gap-3 rounded-full bg-ink px-6 text-sm font-medium text-white transition hover:bg-moss focus:outline-none focus:ring-2 focus:ring-moss focus:ring-offset-2">Quero a minha Blusa Serena <span aria-hidden="true">↗</span></button>
+            <button id="add-to-cart" class="min-h-14 rounded-full border border-ink/20 px-6 text-sm transition hover:border-ink hover:bg-white">Adicionar à sacola +</button>
           </div>
-          <p id="empty-search" class="hidden py-12 text-center text-sm text-ink/60">Não encontramos produtos com esse nome.</p>
-          <div class="mt-10 text-center"><a href="#colecoes" class="inline-flex items-center gap-2 border-b border-ink pb-1 text-sm transition hover:text-clay hover:border-clay">Ver todos os produtos <span aria-hidden="true">↗</span></a></div>
+          <div class="mt-6 grid grid-cols-3 gap-3 border-t border-ink/10 pt-5 text-center">
+            <div><span class="text-base" aria-hidden="true">↗</span><p class="mt-1 text-[10px] leading-4 text-ink/60 sm:text-xs">Frete grátis<br />acima de R$ 249</p></div>
+            <div><span class="text-base" aria-hidden="true">♡</span><p class="mt-1 text-[10px] leading-4 text-ink/60 sm:text-xs">Troca fácil<br />em até 30 dias</p></div>
+            <div><span class="text-base" aria-hidden="true">⌑</span><p class="mt-1 text-[10px] leading-4 text-ink/60 sm:text-xs">Pagamento<br />100% seguro</p></div>
+          </div>
         </div>
       </section>
 
-      <section id="sobre" class="mx-auto grid max-w-[1440px] items-center gap-9 px-5 py-14 sm:px-8 md:grid-cols-2 lg:gap-16 lg:px-12 lg:py-24">
-        <div class="relative aspect-[1.15] overflow-hidden rounded-2xl bg-sand">
-          <img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=85" alt="Detalhes de uma casa com objetos naturais e luz do sol" loading="lazy" />
-          <span class="absolute bottom-5 left-5 rounded-full bg-paper/90 px-4 py-2 text-xs">Feito aqui, para você</span>
-        </div>
-        <div class="max-w-lg">
-          <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-clay">Sobre a mora</p>
-          <h2 class="serif mt-3 text-4xl leading-tight tracking-tight sm:text-5xl">A gente acredita que morar é sentir.</h2>
-          <p class="mt-5 text-sm leading-7 text-ink/65">Por isso, escolhemos cada peça pensando nos pequenos momentos que fazem uma casa ser sua. Valorizamos o trabalho artesanal, os materiais honestos e o design que atravessa o tempo.</p>
-          <a href="#novidades" class="mt-7 inline-flex items-center gap-2 text-sm font-medium underline underline-offset-4 transition hover:text-clay">Conheça nosso jeito <span aria-hidden="true">↗</span></a>
+      <section class="border-y border-ink/10 bg-[#efede6] px-5 py-8 sm:px-8">
+        <div class="mx-auto grid max-w-5xl grid-cols-2 gap-5 text-center sm:grid-cols-4 sm:gap-4">
+          <div><p class="serif text-xl sm:text-2xl">Tecido leve</p><p class="mt-1 text-[10px] text-ink/55 sm:text-xs">viscose macia ao toque</p></div>
+          <div><p class="serif text-xl sm:text-2xl">Caimento solto</p><p class="mt-1 text-[10px] text-ink/55 sm:text-xs">conforto sem esforço</p></div>
+          <div><p class="serif text-xl sm:text-2xl">Combina fácil</p><p class="mt-1 text-[10px] text-ink/55 sm:text-xs">do jeans à alfaiataria</p></div>
+          <div><p class="serif text-xl sm:text-2xl">Feita no Brasil</p><p class="mt-1 text-[10px] text-ink/55 sm:text-xs">produção em pequena escala</p></div>
         </div>
       </section>
 
-      <section class="bg-moss px-5 py-12 text-center text-white sm:px-8 lg:py-16">
-        <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/65">Cartas da mora</p>
-        <h2 class="serif mt-3 text-3xl sm:text-4xl">Inspiração para morar melhor.</h2>
-        <p class="mx-auto mt-3 max-w-md text-sm leading-6 text-white/75">Novidades, ideias e um presente de boas-vindas: 10% OFF na sua primeira compra.</p>
-        <form id="newsletter" class="mx-auto mt-6 flex max-w-md gap-2">
-          <label for="email" class="sr-only">Seu e-mail</label>
-          <input id="email" type="email" required placeholder="Seu melhor e-mail" class="min-w-0 flex-1 rounded-full border border-white/35 bg-white/10 px-5 py-3 text-sm text-white outline-none placeholder:text-white/60 focus:border-white" />
-          <button class="rounded-full bg-paper px-5 py-3 text-sm font-medium text-ink transition hover:bg-white">Quero receber</button>
-        </form>
-        <p id="newsletter-message" class="mt-3 hidden text-xs text-white/80" role="status">Que bom ter você por aqui! Em breve, novidades na sua caixa de entrada.</p>
+      <section class="mx-auto grid max-w-6xl items-center gap-8 px-5 py-14 sm:px-8 sm:py-20 md:grid-cols-2 lg:gap-16">
+        <div class="order-2 md:order-1">
+          <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-clay">Por que a Serena?</p>
+          <h2 class="serif mt-3 text-4xl leading-tight tracking-tight sm:text-5xl">Bonita no cabide.<br />Melhor ainda em você.</h2>
+          <p class="mt-5 max-w-md text-sm leading-7 text-ink/65">A gente acredita em roupa que faz parte da vida de verdade. A Serena tem um toque gostoso, um caimento que não prende e detalhes delicados para deixar qualquer combinação com a sua cara.</p>
+          <ul class="mt-6 space-y-3 text-sm text-ink/75">
+            <li class="flex gap-3"><span class="text-moss">✓</span> Viscose respirável, perfeita para o dia a dia</li>
+            <li class="flex gap-3"><span class="text-moss">✓</span> Modelagem confortável que veste sem apertar</li>
+            <li class="flex gap-3"><span class="text-moss">✓</span> Fácil de cuidar e simples de combinar</li>
+            <li class="flex gap-3"><span class="text-moss">✓</span> Disponível do P ao GG</li>
+          </ul>
+          <a href="#topo" class="mt-7 inline-flex items-center gap-2 text-sm font-medium underline underline-offset-4 transition hover:text-clay">Escolher meu tamanho <span aria-hidden="true">↑</span></a>
+        </div>
+        <div class="order-1 aspect-[0.95] overflow-hidden rounded-2xl bg-[#ddd7cb] md:order-2">
+          <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1100&q=85" alt="Detalhe do caimento e da estampa delicada da Blusa Serena" class="h-full w-full object-cover" loading="lazy" />
+        </div>
+      </section>
+
+      <section id="depoimentos" class="bg-[#efede6] px-5 py-14 sm:px-8 sm:py-20">
+        <div class="mx-auto max-w-6xl">
+          <div class="text-center"><p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-clay">Quem já vestiu, conta</p><h2 class="serif mt-3 text-4xl tracking-tight sm:text-5xl">Ela já é queridinha por aqui.</h2></div>
+          <div class="mt-8 grid gap-4 md:grid-cols-3">
+            <article class="rounded-2xl bg-paper p-6 sm:p-7"><p class="tracking-[0.12em] text-clay">★★★★★</p><blockquote class="mt-4 text-sm leading-6 text-ink/75">“O tecido é uma delícia e o caimento ficou perfeito. Já usei com jeans e com saia — amei!”</blockquote><p class="mt-5 text-xs font-semibold">Mariana R. <span class="font-normal text-ink/50">· compra verificada</span></p></article>
+            <article class="rounded-2xl bg-paper p-6 sm:p-7"><p class="tracking-[0.12em] text-clay">★★★★★</p><blockquote class="mt-4 text-sm leading-6 text-ink/75">“Aquela blusa que você pega sem pensar e sempre fica bem. Chegou rapidinho e bem embalada.”</blockquote><p class="mt-5 text-xs font-semibold">Ana C. <span class="font-normal text-ink/50">· compra verificada</span></p></article>
+            <article class="rounded-2xl bg-paper p-6 sm:p-7"><p class="tracking-[0.12em] text-clay">★★★★★</p><blockquote class="mt-4 text-sm leading-6 text-ink/75">“Comprei uma para testar e já quero outra cor. Leve, confortável e muito mais bonita ao vivo.”</blockquote><p class="mt-5 text-xs font-semibold">Júlia M. <span class="font-normal text-ink/50">· compra verificada</span></p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="tamanhos" class="mx-auto max-w-4xl px-5 py-14 sm:px-8 sm:py-20">
+        <div class="text-center"><p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-clay">Sem dúvida na escolha</p><h2 class="serif mt-3 text-4xl tracking-tight sm:text-5xl">Seu tamanho ideal.</h2><p class="mt-3 text-sm text-ink/60">Compare as medidas com uma blusa que você já ama.</p></div>
+        <div class="mx-auto mt-7 max-w-xl overflow-hidden rounded-xl border border-ink/10">
+          <div class="grid grid-cols-4 bg-[#efede6] text-xs font-semibold"><span class="p-3 sm:p-4">Tam.</span><span class="p-3 sm:p-4">Busto</span><span class="p-3 sm:p-4">Cintura</span><span class="p-3 sm:p-4">Comprimento</span></div>
+          <div class="grid grid-cols-4 border-t border-ink/10 text-xs"><span class="p-3 sm:p-4">P</span><span class="p-3 sm:p-4">88 cm</span><span class="p-3 sm:p-4">88 cm</span><span class="p-3 sm:p-4">58 cm</span></div>
+          <div class="grid grid-cols-4 border-t border-ink/10 bg-white/50 text-xs"><span class="p-3 sm:p-4">M</span><span class="p-3 sm:p-4">96 cm</span><span class="p-3 sm:p-4">96 cm</span><span class="p-3 sm:p-4">60 cm</span></div>
+          <div class="grid grid-cols-4 border-t border-ink/10 text-xs"><span class="p-3 sm:p-4">G</span><span class="p-3 sm:p-4">104 cm</span><span class="p-3 sm:p-4">104 cm</span><span class="p-3 sm:p-4">62 cm</span></div>
+          <div class="grid grid-cols-4 border-t border-ink/10 bg-white/50 text-xs"><span class="p-3 sm:p-4">GG</span><span class="p-3 sm:p-4">112 cm</span><span class="p-3 sm:p-4">112 cm</span><span class="p-3 sm:p-4">64 cm</span></div>
+        </div>
+        <p class="mt-3 text-center text-[10px] leading-5 text-ink/50">Medidas aproximadas da peça. Se preferir um caimento mais soltinho, escolha um tamanho acima.</p>
+      </section>
+
+      <section class="bg-moss px-5 py-12 text-center text-white sm:px-8 sm:py-16">
+        <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/65">A sua nova favorita está aqui</p>
+        <h2 class="serif mx-auto mt-3 max-w-2xl text-4xl leading-tight sm:text-5xl">Vista a Blusa Serena.<br class="hidden sm:block" /> Sinta a diferença.</h2>
+        <p class="mt-4 text-sm text-white/75">De R$ 249 por <strong class="text-white">R$ 199</strong> · frete grátis a partir de R$ 249</p>
+        <a href="#topo" class="mt-7 inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-paper px-8 text-sm font-medium text-ink transition hover:bg-white">Escolher meu tamanho <span aria-hidden="true">↑</span></a>
       </section>
     </main>
 
-    <footer class="bg-paper">
-      <div class="mx-auto grid max-w-[1440px] gap-9 px-5 py-10 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr_1fr] lg:px-12 lg:py-14">
-        <div><a href="#" class="serif text-4xl tracking-[-0.06em]">mora<span class="text-clay">.</span></a><p class="mt-3 max-w-xs text-xs leading-6 text-ink/55">Design com afeto para uma casa vivida de verdade.</p></div>
-        <div><h3 class="text-xs font-semibold uppercase tracking-wider">Ajuda</h3><ul class="mt-4 space-y-3 text-xs text-ink/60"><li><a class="hover:text-ink" href="#">Trocas e devoluções</a></li><li><a class="hover:text-ink" href="#">Envio e entrega</a></li><li><a class="hover:text-ink" href="#">Fale com a gente</a></li></ul></div>
-        <div><h3 class="text-xs font-semibold uppercase tracking-wider">A mora</h3><ul class="mt-4 space-y-3 text-xs text-ink/60"><li><a class="hover:text-ink" href="#sobre">Nossa história</a></li><li><a class="hover:text-ink" href="#colecoes">Nossas coleções</a></li><li><a class="hover:text-ink" href="#">Instagram ↗</a></li></ul></div>
-        <div><h3 class="text-xs font-semibold uppercase tracking-wider">Pagamento seguro</h3><p class="mt-4 text-xs leading-6 text-ink/60">Pix · Visa · Mastercard<br />Até 6x sem juros</p></div>
-      </div>
-      <div class="border-t border-ink/10 px-5 py-4 text-center text-[10px] text-ink/45 sm:px-8 sm:text-left"><div class="mx-auto flex max-w-[1440px] flex-col justify-between gap-2 sm:flex-row lg:px-12"><span>© 2025 mora. Feito com carinho no Brasil.</span><span>Privacidade · Termos de uso</span></div></div>
+    <footer class="mx-auto flex max-w-7xl flex-col justify-between gap-3 px-5 py-6 text-[10px] text-ink/50 sm:flex-row sm:px-8">
+      <a href="#" class="serif text-2xl tracking-[-0.06em] text-ink">veste<span class="text-clay">.</span></a>
+      <p>© 2025 veste. Feito com carinho no Brasil.</p>
+      <p>Pagamento seguro · Troca fácil em até 30 dias</p>
     </footer>
 
     <div id="overlay" class="overlay fixed inset-0 z-40 bg-ink/35" aria-hidden="true"></div>
     <aside id="cart-panel" class="cart-panel fixed bottom-0 right-0 top-0 z-50 flex w-full max-w-md flex-col bg-paper shadow-2xl" aria-label="Sua sacola" aria-hidden="true">
       <div class="flex items-center justify-between border-b border-ink/10 px-6 py-5"><div><p class="serif text-2xl">Sua sacola</p><p id="cart-subtitle" class="mt-1 text-xs text-ink/50">0 itens</p></div><button id="cart-close" class="flex h-10 w-10 items-center justify-center rounded-full transition hover:bg-sand" aria-label="Fechar sacola">✕</button></div>
-      <div id="cart-items" class="flex-1 overflow-y-auto px-6 py-5"><p id="cart-empty" class="py-12 text-center text-sm text-ink/55">Sua sacola ainda está vazia.<br /><a href="#mais-amados" class="mt-3 inline-block underline underline-offset-4">Ver produtos</a></p></div>
-      <div class="border-t border-ink/10 px-6 py-5"><div class="flex justify-between text-sm"><span>Subtotal</span><span id="cart-total">R$ 0</span></div><p class="mt-2 text-xs text-ink/50">Frete calculado na próxima etapa.</p><button id="checkout" class="mt-5 w-full rounded-full bg-ink py-4 text-sm text-white transition hover:bg-moss">Continuar para pagamento</button></div>
+      <div id="cart-items" class="flex-1 overflow-y-auto px-6 py-5"><p id="cart-empty" class="py-12 text-center text-sm text-ink/55">Sua sacola ainda está vazia.</p></div>
+      <div class="border-t border-ink/10 px-6 py-5"><div class="flex justify-between text-sm"><span>Subtotal</span><span id="cart-total">R$ 0</span></div><p class="mt-2 text-xs text-ink/50">Frete calculado na próxima etapa.</p><button id="checkout" class="mt-5 w-full rounded-full bg-ink py-4 text-sm text-white transition hover:bg-moss">Finalizar compra</button></div>
     </aside>
-    <div id="toast" class="pointer-events-none fixed bottom-5 left-1/2 z-[60] -translate-x-1/2 translate-y-3 rounded-full bg-ink px-5 py-3 text-xs text-white opacity-0 shadow-lg transition" role="status">Adicionado à sacola</div>
+    <div id="toast" class="pointer-events-none fixed bottom-24 left-1/2 z-[60] -translate-x-1/2 translate-y-3 rounded-full bg-ink px-5 py-3 text-xs text-white opacity-0 shadow-lg transition sm:bottom-5" role="status"></div>
+
+    <div class="fixed inset-x-0 bottom-0 z-30 flex items-center justify-between border-t border-ink/10 bg-paper/95 px-4 py-3 backdrop-blur sm:hidden">
+      <div><p class="text-[10px] text-ink/50">Blusa Serena</p><p class="text-base font-semibold">R$ 199,00</p></div>
+      <button id="mobile-buy" class="rounded-full bg-ink px-5 py-3 text-xs font-medium text-white">Comprar agora ↗</button>
+    </div>
 
     <script>
       const cart = [];
+      let selectedSize = "M";
       const cartPanel = document.querySelector("#cart-panel");
       const overlay = document.querySelector("#overlay");
-      const cartCount = document.querySelector("#cart-count");
       const cartItems = document.querySelector("#cart-items");
       const cartEmpty = document.querySelector("#cart-empty");
-      const cartSubtitle = document.querySelector("#cart-subtitle");
-      const cartTotal = document.querySelector("#cart-total");
       const toast = document.querySelector("#toast");
       let toastTimer;
 
       function formatPrice(price) {
-        return new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 }).format(price);
+        return new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL", minimumFractionDigits: 2 }).format(price);
       }
 
       function openCart() {
@@ -262,9 +219,9 @@
       function renderCart() {
         const quantity = cart.reduce((sum, item) => sum + item.quantity, 0);
         const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-        cartCount.textContent = quantity;
-        cartSubtitle.textContent = `${quantity} ${quantity === 1 ? "item" : "itens"}`;
-        cartTotal.textContent = formatPrice(total);
+        document.querySelector("#cart-count").textContent = quantity;
+        document.querySelector("#cart-subtitle").textContent = `${quantity} ${quantity === 1 ? "item" : "itens"}`;
+        document.querySelector("#cart-total").textContent = formatPrice(total);
         cartEmpty.classList.toggle("hidden", cart.length > 0);
         cartItems.querySelectorAll(".cart-line").forEach((line) => line.remove());
 
@@ -272,10 +229,9 @@
           const line = document.createElement("div");
           line.className = "cart-line flex items-center justify-between gap-4 border-b border-ink/10 py-4";
           const details = document.createElement("div");
-          details.className = "min-w-0";
           const name = document.createElement("p");
           name.className = "text-sm font-medium";
-          name.textContent = item.name;
+          name.textContent = `Blusa Serena · ${item.size}`;
           const price = document.createElement("p");
           price.className = "mt-1 text-xs text-ink/55";
           price.textContent = `${formatPrice(item.price)} · qtd. ${item.quantity}`;
@@ -284,7 +240,7 @@
           remove.type = "button";
           remove.className = "text-xs underline underline-offset-4 hover:text-clay";
           remove.textContent = "Remover";
-          remove.setAttribute("aria-label", `Remover ${item.name} da sacola`);
+          remove.setAttribute("aria-label", `Remover Blusa Serena tamanho ${item.size} da sacola`);
           remove.addEventListener("click", () => {
             const index = cart.indexOf(item);
             if (index !== -1) cart.splice(index, 1);
@@ -299,8 +255,31 @@
         toast.textContent = message;
         toast.classList.remove("translate-y-3", "opacity-0");
         clearTimeout(toastTimer);
-        toastTimer = setTimeout(() => toast.classList.add("translate-y-3", "opacity-0"), 2200);
+        toastTimer = setTimeout(() => toast.classList.add("translate-y-3", "opacity-0"), 2400);
       }
+
+      function addToCart() {
+        const existing = cart.find((item) => item.size === selectedSize);
+        if (existing) existing.quantity += 1;
+        else cart.push({ price: 199, size: selectedSize, quantity: 1 });
+        renderCart();
+        showToast(`Blusa Serena · ${selectedSize} adicionada à sacola`);
+      }
+
+      document.querySelectorAll(".size-option").forEach((button) => {
+        button.addEventListener("click", () => {
+          selectedSize = button.dataset.size;
+          document.querySelector("#selected-size").textContent = `· ${selectedSize}`;
+          document.querySelectorAll(".size-option").forEach((option) => {
+            const active = option === button;
+            option.setAttribute("aria-pressed", String(active));
+            option.classList.toggle("border-ink", active);
+            option.classList.toggle("bg-ink", active);
+            option.classList.toggle("text-white", active);
+            option.classList.toggle("border-ink/20", !active);
+          });
+        });
+      });
 
       document.querySelector("#cart-open").addEventListener("click", openCart);
       document.querySelector("#cart-close").addEventListener("click", closeCart);
@@ -308,83 +287,18 @@
       document.addEventListener("keydown", (event) => {
         if (event.key === "Escape") closeCart();
       });
-
-      document.querySelectorAll(".quick-add").forEach((button) => {
-        button.addEventListener("click", () => {
-          const product = button.closest(".product-card");
-          const existing = cart.find((item) => item.name === product.dataset.name);
-          if (existing) existing.quantity += 1;
-          else cart.push({ name: product.dataset.name, price: Number(product.dataset.price), quantity: 1 });
-          renderCart();
-          showToast(`${product.dataset.name} adicionado à sacola`);
-        });
+      document.querySelector("#add-to-cart").addEventListener("click", addToCart);
+      document.querySelector("#buy-now").addEventListener("click", () => {
+        addToCart();
+        openCart();
       });
-
-      document.querySelectorAll(".favorite").forEach((button) => {
-        button.addEventListener("click", () => {
-          const selected = button.getAttribute("aria-pressed") === "true";
-          button.setAttribute("aria-pressed", String(!selected));
-          button.textContent = selected ? "♡" : "♥";
-          button.classList.toggle("text-clay", !selected);
-          showToast(selected ? "Removido dos favoritos" : "Adicionado aos favoritos");
-        });
-        button.setAttribute("aria-pressed", "false");
-      });
-
-      function filterProducts(category) {
-        document.querySelectorAll(".product-card").forEach((product) => {
-          product.hidden = category !== "Todos" && product.dataset.category !== category;
-        });
-        document.querySelectorAll(".filter-btn").forEach((button) => {
-          const active = button.dataset.filter === category;
-          button.classList.toggle("bg-ink", active);
-          button.classList.toggle("text-white", active);
-          button.classList.toggle("border", !active);
-          button.classList.toggle("border-ink/20", !active);
-        });
-        updateSearch();
-      }
-
-      document.querySelectorAll(".filter-btn").forEach((button) => {
-        button.addEventListener("click", () => filterProducts(button.dataset.filter));
-      });
-      document.querySelectorAll("[data-category-link]").forEach((link) => {
-        link.addEventListener("click", () => filterProducts(link.dataset.categoryLink));
-      });
-
-      const search = document.querySelector("#search");
-      function updateSearch() {
-        const term = search.value.trim().toLocaleLowerCase("pt-BR");
-        let visibleCount = 0;
-        document.querySelectorAll(".product-card").forEach((product) => {
-          const categoryButton = document.querySelector(".filter-btn.bg-ink");
-          const categoryMatches = !categoryButton || categoryButton.dataset.filter === "Todos" || categoryButton.dataset.filter === product.dataset.category;
-          const matches = categoryMatches && product.dataset.name.toLocaleLowerCase("pt-BR").includes(term);
-          product.hidden = !matches;
-          if (matches) visibleCount += 1;
-        });
-        document.querySelector("#empty-search").classList.toggle("hidden", visibleCount > 0);
-      }
-      search.addEventListener("input", updateSearch);
-
-      document.querySelector("#mobile-menu").addEventListener("click", () => {
-        const nav = document.querySelector("#main-nav");
-        nav.classList.toggle("hidden");
-        nav.classList.toggle("block");
-      });
-      document.querySelectorAll("#main-nav a").forEach((link) => link.addEventListener("click", () => {
-        document.querySelector("#main-nav").classList.add("hidden");
-        document.querySelector("#main-nav").classList.remove("block");
-      }));
-
-      document.querySelector("#newsletter").addEventListener("submit", (event) => {
-        event.preventDefault();
-        document.querySelector("#newsletter-message").classList.remove("hidden");
-        event.currentTarget.reset();
+      document.querySelector("#mobile-buy").addEventListener("click", () => {
+        addToCart();
+        openCart();
       });
       document.querySelector("#checkout").addEventListener("click", () => {
         if (!cart.length) showToast("Sua sacola está vazia");
-        else showToast("Checkout demonstrativo — pedido pronto!");
+        else showToast("Pedido pronto! O checkout estará disponível em breve.");
       });
     </script>
   </body>
